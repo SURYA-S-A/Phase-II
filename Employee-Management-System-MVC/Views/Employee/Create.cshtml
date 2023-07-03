@@ -1,0 +1,55 @@
+﻿@model Employee
+
+<form method="post" enctype="multipart/form-data">
+    <div class="border p-3 mb-4">
+        <div class="row mb-4">
+            <h2 class="text-primary">Create Employee</h2>
+        </div>        
+        <div class="form-group mb-4">
+            <label asp-for="EmployeeName">Name</label>
+            <input type="text" class="form-control" asp-for="EmployeeName" placeholder="Enter name">
+            <span asp-validation-for="EmployeeName" class="text-danger"></span>
+        </div>
+        <div class="form-group mb-4">
+            <label asp-for="EmployeeGender">Gender</label>
+            <select class="form-control" asp-for="EmployeeGender">
+                <option value="select">---Select---</option>
+                <option value="M">Male</option>
+                <option value="F">Female</option>
+            </select>
+            <span asp-validation-for="EmployeeGender"></span>
+        </div>
+        <div class="form-group mb-4">
+            <label asp-for="EmployeeBirthDate">Birth date</label>
+            <input type="date" class="form-control" asp-for="EmployeeBirthDate">
+        </div>
+        <div class="form-group mb-4">
+            <label asp-for="FK_PositionId">Position</label>
+            <select class="form-control" asp-for="FK_PositionId">
+                <option value="select">---Select---</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+            </select>
+            <span asp-validation-for="FK_PositionId"></span>
+        </div>
+        <div class="form-group mb-4">
+            <label asp-for="EmployeeSalary">Salary</label>
+            <input type="number" class="form-control" asp-for="EmployeeSalary">
+            <span asp-validation-for="EmployeeSalary"></span>
+        </div>
+        <div class="form-group mb-4">
+            <label asp-for="EmployeeMobileNumber">Mobile number</label>
+            <input type="number" class="form-control" asp-for="EmployeeMobileNumber">
+            <span asp-validation-for="EmployeeMobileNumber"></span>
+        </div>
+        <div class="form-group mb-4">
+            <label asp-for="EmployeeImageUrl">Image</label>
+            <input type="file" class="form-control" id="imageFile" name="imageFile">
+        </div>
+        <div class="form-group mb-4">
+            <div class="col-12 text-end">
+                <input type="submit" value="Create" class="btn btn-primary"/>
+            </div>
+        </div>
+    </div>
+</form>
