@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\buildMultiTargeting\Employee-Management-System-MVC.props" />
+</Project>
