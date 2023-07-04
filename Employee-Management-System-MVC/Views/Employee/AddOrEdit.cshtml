@@ -1,0 +1,77 @@
+﻿@model Employee
+
+
+<form method="post" enctype="multipart/form-data">
+    <div class="border p-3 mb-4">
+        <div class="row mb-4">
+            <h2 class="text-primary">@ViewBag.Title</h2>
+        </div>
+        <div class="form-group mb-4">
+            <input type="text" class="form-control" asp-for="EmployeeId" hidden/>
+        </div>
+        <div class="form-group mb-4">
+            <label asp-for="EmployeeName"></label>
+            <input type="text" class="form-control" asp-for="EmployeeName" placeholder="Enter name">
+            <span asp-validation-for="EmployeeName" class="text-danger"></span>
+        </div>
+        <div class="form-group mb-4">
+            <label asp-for="EmployeeGender"></label>
+            <select class="form-control" asp-for="EmployeeGender">
+                <option value="M">Male</option>
+                <option value="F">Female</option>
+                <option value="O">Prefer not to say</option>
+            </select>
+            <span asp-validation-for="EmployeeGender" class="text-danger"></span>
+        </div>
+        <div class="form-group mb-4">
+            <label asp-for="EmployeeBirthDate"></label>
+            <input type="date" class="form-control" asp-for="EmployeeBirthDate">
+            <span asp-validation-for="EmployeeBirthDate" class="text-danger"></span>
+        </div>
+        <div class="form-group mb-4">
+            <label asp-for="FK_PositionId"></label>
+            <select class="form-control" asp-for="FK_PositionId">
+                <option value="1">1</option>
+                <option value="2">2</option>
+            </select>
+            <span asp-validation-for="FK_PositionId" class="text-danger"></span>
+        </div>
+        <div class="form-group mb-4">
+            <label asp-for="EmployeeSalary"></label>
+            <input type="number" class="form-control" asp-for="EmployeeSalary">
+            <span asp-validation-for="EmployeeSalary" class="text-danger"></span>
+        </div>
+        <div class="form-group mb-4">
+            <label asp-for="EmployeeMobileNumber"></label>
+            <input type="number" class="form-control" asp-for="EmployeeMobileNumber">
+            <span asp-validation-for="EmployeeMobileNumber" class="text-danger"></span>
+        </div>
+        <div class="form-group mb-4">
+            <label asp-for="EmployeeImageUrl"></label>
+            @if (Model != null && !string.IsNullOrEmpty(Model.EmployeeImageUrl))
+            {
+                <a href="@(Model.EmployeeImageUrl)" target="_blank">
+                View image
+                </a>
+                <br />
+                <input type="file" class="form-control" id="imageFile" name="imageFile">
+            }
+            else
+            {
+                <input type="file" class="form-control" id="imageFile" name="imageFile">
+            }
+        </div>
+        <div class="form-group mb-4">
+            <div class="col-12 text-end">
+                <input type="submit" value="@ViewBag.ButtonText" class="btn btn-primary" />
+            </div>
+        </div>
+    </div>
+</form>
+
+@*@section Scripts{
+    @{
+    <partial name="_ValidationScriptsPartial"/>
+    }
+}*@
+
