@@ -1,3 +1,0 @@
-﻿<Project>
-  <Import Project="..\build\Employee-Management-System-MVC.props" />
-</Project>
